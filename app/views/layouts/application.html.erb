@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ea2V2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- viewport meta to reset iPhone inital scale -->
+    <%# <link rel="stylesheet" href="menu/responsivemobilemenu.css" type="text/css"/> %>
+    <%# <script type="text/javascript" src="jquery.min.js"></script> %>
+    <%# <script type="text/javascript" src="menu/responsivemobilemenu.js"></script> %>
+    <%# <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="RomanVanLoo">
+    <meta name="keywords" content="EA2, experts in antique, stone &amp; wood"/>
+    <meta name="description" content="EA2, experts in antique, stone and wood"/>
+    <title><%= content_for?(:html_title) ? yield(:html_title) : "EXPERTS IN ANTIQUE - STONE & WOOD - EA2" %></title>
+    <%# <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/> %>
+    <%# down here comes from rails %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
