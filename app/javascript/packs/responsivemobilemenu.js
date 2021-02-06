@@ -9,7 +9,7 @@ Author URI: http://xmacros.com
 License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
 
 */
-
+console.log($(document));
 function responsiveMobileMenu() {	
 		$('.rmm').each(function() {
 			
