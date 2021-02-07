@@ -17,7 +17,7 @@ development:
   database: ea2_V2_development
 
 production:
-  <<: *defaults_pg
-  database: ea2_V2_production
-  username: ea2_V2
-  password: <%= ENV['ea2_V2_DATABASE_PASSWORD'] %>
+  url: <%= ENV[‘DATABASE_URL’] %>
+
+staging:
+ url: <%= ENV[‘DATABASE_URL’] %>
