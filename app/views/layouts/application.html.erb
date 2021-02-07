@@ -25,6 +25,98 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="pagewrap">
+      <div id="header">
+        <div id="logo">
+          <%= link_to root_path do %>
+            <%= image_tag ("logo-344x65.png"), class: "ri", style: "margin-top: 5px" %>
+          <% end %>
+        </div>
+        <div class="rmm">
+          <ul>
+            <li><%= link_to "Impressions", root_path, class: "#{"active" if current_page?(root_path)}" %></li>
+            <li><%= link_to "Before & After", before_and_after_path, class: "#{"active" if current_page?(before_and_after_path)}" %></li>
+            <li><%= link_to "At Work", at_work_path, class: "#{"active" if current_page?(at_work_path)}" %></li>
+            <li><%= link_to "About", about_path, class: "#{"active" if current_page?(about_path)}" %></li>
+          </ul>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+
+    <%# SET NAVBAR %>
+    <script>
+      function responsiveMobileMenu() {
+        $('.rmm').each(function() {
+          $(this).children('ul').addClass('rmm-main-list');	// mark main menu list
+          var $style = $(this).attr('data-menu-style');	// get menu style
+          if ( typeof $style == 'undefined' ||  $style == false )
+          {
+            $(this).addClass('graphite'); // set graphite style if style is not defined
+          }
+          else {
+            $(this).addClass($style);
+          }
+        });
+      }
+
+      function getMobileMenu() {
+        /* 	build toggled dropdown menu list */
+        $('.rmm').each(function() {
+          var menutitle = $(this).attr("data-menu-title");
+          if ( menutitle == "" ) {
+            menutitle = "Menu";
+          }
+          else if ( menutitle == undefined ) {
+            menutitle = "Menu";
+          }
+          var $menulist = $(this).children('.rmm-main-list').html();
+          var $menucontrols ="<div class='rmm-toggled-controls'><div class='rmm-toggled-title'>" + menutitle + "</div><div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div></div>";
+          $(this).prepend("<div class='rmm-toggled rmm-closed'>"+$menucontrols+"<ul>"+$menulist+"</ul></div>");
+
+        });
+    }
+
+    function adaptMenu() {
+
+      /* 	toggle menu on resize */
+
+        $('.rmm').each(function() {
+          var $width = $(this).css('max-width');
+          $width = $width.replace('px', '');
+          if ( $(this).parent().width() < $width*1.05 ) {
+            $(this).children('.rmm-main-list').hide(0);
+            $(this).children('.rmm-toggled').show(0);
+          }
+          else {
+            $(this).children('.rmm-main-list').show(0);
+            $(this).children('.rmm-toggled').hide(0);
+          }
+        });
+
+    }
+
+    $(function() {
+      responsiveMobileMenu();
+      getMobileMenu();
+      adaptMenu();
+      /* slide down mobile menu on click */
+        $('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
+          if ( $(this).is(".rmm-closed")) {
+            $(this).find('ul').stop().show(300);
+            $(this).removeClass("rmm-closed");
+          }
+          else {
+            $(this).find('ul').stop().hide(300);
+            $(this).addClass("rmm-closed");
+          }
+        });
+    });
+
+    /* 	hide mobile menu on resize */
+      $(window).resize(function() {
+        adaptMenu();
+      });
+    </script>
   </body>
 </html>
