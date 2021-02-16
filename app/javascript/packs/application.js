@@ -12,7 +12,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require("jquery3")
+require("jquery")
 require("packs/responsivemobilemenu")
-require("bootstrap-sprockets")
-require("popper")
