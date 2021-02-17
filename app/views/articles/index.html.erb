@@ -1,0 +1,17 @@
+<%# iterate through all the articles, display mini cards of them %>
+<%= link_to "Add Article", new_articles_path, class: "btn btn-primary" %>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @articles.each do |article| %>
+    <div class="col">
+      <div class="card" style="width: 18rem; margin: 1rem 1rem;">
+        <img src="" class="card-img-top"> <%# change source to article.photo.url or something %>
+      <div class="card-body">
+        <h5 class="card-title"><%= article.title %></h5>
+        <p class="card-text"><%= article.category %></p>
+        <%= link_to "Edit", edit_articles_path(id: article.id), class: "btn btn-secondary" %>
+        <%= link_to "Destroy", articles_path(id: article.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
