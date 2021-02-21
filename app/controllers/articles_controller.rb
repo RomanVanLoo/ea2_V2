@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.all.order(:id)
   end
 
   def new
@@ -31,8 +31,11 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
-    redirect_to admin_path
+    if @article.destroy
+      redirect_to admin_path
+    else
+      render :index, alert: @article.errors.full_messages.join(', ')
+    end
   end
 
   private
@@ -44,7 +47,7 @@ class ArticlesController < ApplicationController
       :price,
       :category,
       :dimensions,
-      :article_image
+      photos: []
     )
   end
 end

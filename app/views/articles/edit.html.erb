@@ -11,9 +11,10 @@
   <%= f.label "Price", class: "form-label" %>
   <%= f.number_field :price, step: 0.01,class: "form-control" %>
   <%= f.label "Upload Photo", class: "form-label" %><br>
-  <%= f.file_field :article_image %><br>
-  <%= image_tag(@article.article_image_url, class: "admin-article-image") if @article.article_image? %><br>
-  <%= f.hidden_field :article_image_cache %><br>
+  <%= f.file_field :photos, multiple: true %><br>
+  <% @article.photos.each do |image| %>
+    <%= image_tag(image.url, class: "admin-article-image") %><br>
+  <% end %>
   <%= f.submit "Edit", class: "btn btn-primary" %>
 <% end %>
 <%= link_to "Go Back", admin_path, class: "btn btn-secondary" %>
