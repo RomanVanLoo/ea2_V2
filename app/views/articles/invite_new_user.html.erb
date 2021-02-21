@@ -1,0 +1,7 @@
+<h2>New User</h2>
+<%= form_for @new_user, url: invite_user_path(@new_user), html: { class: "new-article-form" } do |f| %>
+  <%= f.label "Email", class: "form-label" %>
+  <%= f.text_field :email, class: "form-control" %>
+  <%= f.submit "Invite", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Go Back", admin_path, class: "btn btn-secondary" %>
