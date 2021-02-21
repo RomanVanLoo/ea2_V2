@@ -13,4 +13,8 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def antiques
+    @articles = Article.all.antiques
+  end
 end

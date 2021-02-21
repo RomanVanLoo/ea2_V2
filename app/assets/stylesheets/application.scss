@@ -12,3 +12,31 @@
   object-fit: contain;
 }
 
+.article-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  min-width: 600px;
+}
+
+.article-card {
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+
+  &:hover {
+    filter: opacity(0.6);
+  }
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+.grid-item {
+  // background-color: green;
+  // padding: 20px;
+  // font-size: 30px;
+  // text-align: center;
+}

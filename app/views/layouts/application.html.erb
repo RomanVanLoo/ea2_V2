@@ -42,6 +42,8 @@
         </div>
         <div class="rmm">
           <ul>
+            <li><%= link_to "Antiques", antiques_path, class: "#{"active" if current_page?(antiques_path)}" %></li>
+            <li><%= link_to "Arts", root_path, class: "#{"active" if current_page?(root_path)}" %></li>
             <li><%= link_to "Impressions", root_path, class: "#{"active" if current_page?(root_path)}" %></li>
             <li><%= link_to "Before & After", before_and_after_path, class: "#{"active" if current_page?(before_and_after_path)}" %></li>
             <li><%= link_to "At Work", at_work_path, class: "#{"active" if current_page?(at_work_path)}" %></li>

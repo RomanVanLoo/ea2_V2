@@ -6,6 +6,8 @@ class Article < ApplicationRecord
     "Art"
   ].freeze
 
+  scope :antiques, -> { where(category: "Antiques") }
+
   before_destroy :delete_photos
 
   private
