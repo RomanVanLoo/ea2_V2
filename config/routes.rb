@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
   resource :articles, only: [:new, :create, :edit, :update, :destroy]
   get "admin", to: "articles#index"
+  get "toggle_arts", to: "settings#toggle_arts", as: "toggle_arts"
+  get "toggle_antiques", to: "settings#toggle_antiques", as: "toggle_antiques"
 end

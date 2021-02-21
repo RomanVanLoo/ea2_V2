@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_155619) do
-A
+ActiveRecord::Schema.define(version: 2021_02_21_165339) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,13 @@ A
     t.string "description"
     t.string "dimensions"
     t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.boolean "display_arts"
+    t.boolean "display_antiques"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

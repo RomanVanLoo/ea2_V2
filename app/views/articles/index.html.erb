@@ -1,5 +1,7 @@
 <%# iterate through all the articles, display mini cards of them %>
 <%= link_to "Add Article", new_articles_path, class: "btn btn-primary" %>
+<%= link_to "Toggle Arts", toggle_arts_path, class: "btn btn-warning" %>
+<%= link_to "Toggle Antiques", toggle_antiques_path, class: "btn btn-warning" %>
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @articles.each do |article| %>
     <div class="col">
