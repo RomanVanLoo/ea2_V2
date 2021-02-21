@@ -4,7 +4,7 @@
   <% @articles.each do |article| %>
     <div class="col">
       <div class="card" style="width: 18rem; margin: 1rem 1rem;">
-        <img src="" class="card-img-top"> <%# change source to article.photo.url or something %>
+        <img src="<%= article.article_image.url %>" class="card-img-top" style="height: 300px; object-fit: cover">
       <div class="card-body">
         <h5 class="card-title"><%= article.title %></h5>
         <p class="card-text"><%= article.category %></p>

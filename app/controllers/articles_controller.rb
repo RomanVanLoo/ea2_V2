@@ -43,7 +43,8 @@ class ArticlesController < ApplicationController
       :description,
       :price,
       :category,
-      :dimensions
+      :dimensions,
+      :article_image
     )
   end
 end

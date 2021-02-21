@@ -10,6 +10,10 @@
   <%= f.text_field :dimensions, class: "form-control" %>
   <%= f.label "Price", class: "form-label" %>
   <%= f.number_field :price, step: 0.01,class: "form-control" %>
+  <%= f.label "Upload Photo", class: "form-label" %><br>
+  <%= f.file_field :article_image %><br>
+  <%= image_tag(@article.article_image_url, class: "admin-article-image") if @article.article_image? %><br>
+  <%= f.hidden_field :article_image_cache %><br>
   <%= f.submit "Edit", class: "btn btn-primary" %>
 <% end %>
 <%= link_to "Go Back", admin_path, class: "btn btn-secondary" %>
