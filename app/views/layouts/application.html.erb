@@ -22,6 +22,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -45,6 +46,9 @@
             <li><%= link_to "Before & After", before_and_after_path, class: "#{"active" if current_page?(before_and_after_path)}" %></li>
             <li><%= link_to "At Work", at_work_path, class: "#{"active" if current_page?(at_work_path)}" %></li>
             <li><%= link_to "About", about_path, class: "#{"active" if current_page?(about_path)}" %></li>
+            <% unless current_user.blank? %>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign_out_btn" %></li>
+            <% end %>
           </ul>
         </div>
       </div>

@@ -1,7 +1,14 @@
-/*
-    *= require_self
-    // notice I'm only requiring main.scss
-    *= require main
-*/
-
 @import "bootstrap";
+@import "articles";
+@import "previous_site";
+@import "pages";
+
+.new-article-form * {
+  margin-bottom: 1rem;
+}
+
+.admin-article-image {
+  width: 300px;
+  object-fit: contain;
+}
+

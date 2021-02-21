@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "before_and_after", to: "pages#before_and_after"
   get "at_work", to: "pages#at_work"
   get "about", to: "pages#about"
+  resource :articles, only: [:new, :create, :edit, :update, :destroy]
+  get "admin", to: "articles#index"
 end
