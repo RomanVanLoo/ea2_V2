@@ -1,1 +1,34 @@
-<h1>SHOW ARTICLE</h1>
+<div class="article-box">
+  <div class="article-box-top-arrow">
+    <%= link_to antiques_path do %>
+      <div class="arrow-hover-wrapper">
+        <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-back-arrow" %>
+        <p class="back-arrow-text">BACK</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="article-box-top-left"></div>
+  <div class="article-box-top-middle">
+    <p class="article-box-text"><%= @article.title %></p>
+  </div>
+  <div class="article-box-top-right"></div>
+  <div class="article-box-middle-left">
+    <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-arrow-left" %>
+  </div>
+  <div class="article-box-middle-middle">
+    <img src="<%= @article.photos.first.url %>">
+    <img src="https://source.unsplash.com/1000x750">
+    <img src="https://source.unsplash.com/1200x750">
+    <img src="https://source.unsplash.com/750x1000">
+    <img src="https://source.unsplash.com/750x1000">
+  </div>
+  <div class="article-box-middle-right">
+    <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-arrow-right" %>
+  </div>
+  <div class="article-box-bottom-left"></div>
+  <div class="article-box-bottom-double-left"></div>
+  <div class="article-box-bottom-middle">
+    <p class="article-box-text" style="font-size: 16px;"><%= @article.dimensions %></p>
+  </div>
+  <div class="article-box-bottom-right"></div>
+</div>

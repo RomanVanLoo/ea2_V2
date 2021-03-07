@@ -40,3 +40,146 @@
   // font-size: 30px;
   // text-align: center;
 }
+
+.article-box {
+  margin-top: 150px;
+  width: 60vw;
+  min-width: 650px;
+  height: 415px;
+  display: grid;
+  grid-template-columns: 96px 50px auto 50px;
+  grid-template-rows: 40px 1fr 40px;
+  gap: 0px 0px;
+  grid-template-areas:
+    "article-box-top-arrow . . ."
+    "article-box-top-arrow . . ."
+    ". . . .";
+ }
+
+.article-box-top-arrow {
+  grid-area: article-box-top-arrow;
+  display: flex;
+  justify-content: right;
+  padding-top: 7px;
+  position: relative;
+  a {
+    width: 72px;
+    height: 65px;
+    margin-left: auto;
+    margin-right: 0px;
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.article-box-top-left {
+  border-bottom: 1px solid black;
+}
+
+.article-box-top-middle {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.article-box-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 40px;
+  /* identical to box height */
+
+  letter-spacing: 0.1em;
+  padding-left: 50px;
+  margin-bottom: 0px;
+}
+
+.article-box-top-right {
+  border-bottom: 1px solid black;
+}
+
+.article-box-middle-left {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  svg {
+    height: 50px;
+    right: 15px;
+    position: absolute;
+  }
+}
+
+.article-box-middle-middle {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 10px 40px;
+  img {
+    width: 100%;
+    max-width: 50vw;
+  }
+}
+
+.article-box-middle-right {
+  border-bottom: 1px solid black;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  svg {
+    height: 50px;
+    transform: rotate(180deg);
+    position: absolute;
+    left: 15px;
+  }
+
+}
+
+.article-box-bottom-left {
+  // border-bottom: 1px solid black;
+}
+
+.article-box-bottom-middle {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.article-box-bottom-right {
+}
+
+.article-back-arrow {
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.back-arrow-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  position: absolute;
+  top: 33px;
+  right: 8px;
+  pointer-events: none;
+}
+
+.arrow-hover-wrapper {
+  width: 72px;
+  height: 65px;
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.arrow-hover-wrapper:hover {
+  svg {
+    fill: #424242;
+  }
+  p {
+    color: white;
+  }
+}

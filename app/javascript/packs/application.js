@@ -14,3 +14,5 @@ ActiveStorage.start()
 
 require("jquery")
 require("packs/responsivemobilemenu")
+
+import "controllers"

@@ -1,0 +1,13 @@
+.article-box {
+  width: 60vw;
+  min-width: 650px;
+  height: 415px;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 40px 1fr 40px;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+}
