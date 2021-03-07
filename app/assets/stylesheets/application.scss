@@ -43,18 +43,20 @@
 
 .article-box {
   margin-top: 150px;
-  width: 60vw;
   min-width: 650px;
+  width: auto;
+  max-width: 35vw;
   height: 415px;
   display: grid;
   grid-template-columns: 96px 50px auto 50px;
   grid-template-rows: 40px 1fr 40px;
   gap: 0px 0px;
   grid-template-areas:
-    "article-box-top-arrow . . ."
-    "article-box-top-arrow . . ."
-    ". . . .";
- }
+  "article-box-top-arrow . . ."
+  "article-box-top-arrow . . ."
+  ". . . .";
+  margin-right: 80px;
+}
 
 .article-box-top-arrow {
   grid-area: article-box-top-arrow;
@@ -118,7 +120,7 @@
   padding: 10px 40px;
   img {
     width: 100%;
-    max-width: 50vw;
+    max-width: 40vw;
   }
 }
 
@@ -158,14 +160,15 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 16px;
   text-align: center;
   letter-spacing: 0.08em;
   position: absolute;
-  top: 33px;
+  top: 32px;
   right: 8px;
   pointer-events: none;
+  text-decoration: underline;
 }
 
 .arrow-hover-wrapper {
@@ -182,4 +185,93 @@
   p {
     color: white;
   }
+}
+
+.article-second-box {
+  margin-top: 150px;
+  width: auto;
+  max-width: 35vw;
+  height: 415px;
+  display: grid;
+  grid-template-columns: 50px 175px 50px;
+  grid-template-rows: 40px 50px 400px;
+  gap: 0px 0px;
+  grid-template-areas:
+  ". . ."
+  ". . ."
+  ". . .";
+  margin-left: 80px;
+}
+
+.article-big-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-second-box-top-left {
+  border-bottom: 1px solid black;
+}
+
+.article-second-box-top-middle {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.article-second-box-top-right {
+  border-bottom: 1px solid black;
+}
+
+.article-second-box-middle-left {
+  border-bottom: 1px solid black;
+}
+
+.article-second-box-middle-middle {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  position: relative;
+}
+
+.article-second-box-middle-right {
+  border-bottom: 1px solid black;
+}
+
+.article-second-box-bottom-middle {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.article-contact-us-btn {
+  color: black;
+  text-decoration: underline;
+  margin: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+  line-height: 50px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  &:hover {
+    color: white;
+    background-color: #424242;
+    text-decoration: none;
+  }
+}
+
+.article-description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin: 10px;
 }
