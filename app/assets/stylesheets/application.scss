@@ -42,7 +42,6 @@
 }
 
 .article-box {
-  margin-top: 150px;
   min-width: 650px;
   width: auto;
   max-width: 35vw;
@@ -188,7 +187,6 @@
 }
 
 .article-second-box {
-  margin-top: 150px;
   width: auto;
   max-width: 35vw;
   height: 415px;
@@ -206,6 +204,7 @@
 .article-big-wrapper {
   display: flex;
   justify-content: center;
+  margin-top: 100px;
 }
 
 .article-second-box-top-left {
