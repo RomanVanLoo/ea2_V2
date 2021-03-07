@@ -1,4 +1,4 @@
-<div class="article-box">
+<div class="article-box carousel slide" id="articles-carousel" data-interval="false">
   <div class="article-box-top-arrow">
     <%= link_to antiques_path do %>
       <div class="arrow-hover-wrapper">
@@ -12,19 +12,21 @@
     <p class="article-box-text"><%= @article.title %></p>
   </div>
   <div class="article-box-top-right"></div>
-  <div class="article-box-middle-left">
+  <div class="article-box-middle-left" href="#articles-carousel" role="button" data-slide="prev">
     <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-arrow-left" %>
   </div>
   <div class="article-box-middle-middle">
-    <img src="<%= @article.photos.first.url %>">
-    <img src="https://source.unsplash.com/1000x750">
-    <img src="https://source.unsplash.com/1200x750">
-    <img src="https://source.unsplash.com/750x1000">
-    <img src="https://source.unsplash.com/750x1000">
+    <div class="carousel-inner">
+      <% @article.photos.each_with_index do |photo, i| %>
+        <div class="carousel-item<%= i.zero? ? " active" : "" %>">
+          <img src="<%= photo.url %>">
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="article-box-middle-right">
+  <a class="article-box-middle-right" href="#articles-carousel" role="button" data-slide="next">
     <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-arrow-right" %>
-  </div>
+  </a>
   <div class="article-box-bottom-left"></div>
   <div class="article-box-bottom-double-left"></div>
   <div class="article-box-bottom-middle">
