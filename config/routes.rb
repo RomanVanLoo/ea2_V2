@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, skip: [:registrations]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "pages#impressions"
   get "before_and_after", to: "pages#before_and_after"
