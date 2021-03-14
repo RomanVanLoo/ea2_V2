@@ -12,7 +12,3 @@ user.password = ENV['ROMAN_PASSWORD']
 user.password_confirmation = ENV['ROMAN_PASSWORD']
 user.save!
 
-settings = Setting.new
-settings.display_arts = true
-settings.display_antiques = true
-settings.save!
