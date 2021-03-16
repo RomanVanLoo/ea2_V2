@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(version: 2021_03_16_203937) do
     t.string "name"
     t.string "email"
     t.string "content"
-    t.bigint "articles_id"
+    t.bigint "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["articles_id"], name: "index_messages_on_articles_id"
+    t.index ["article_id"], name: "index_messages_on_article_id"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -95,5 +95,5 @@ ActiveRecord::Schema.define(version: 2021_03_16_203937) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "messages", "articles", column: "articles_id"
+  add_foreign_key "messages", "articles"
 end
