@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     respond_to do |format|
-      if @message.save && @message.send_email
+      if @message.save
         format.html { redirect_to articles_path(id: message_params[:article_id]), notice: "Message successfully sent!" }
       else
         format.html { redirect_to articles_path(id: message_params[:article_id]), alert: "We're sorry, something went wrong!" }
