@@ -55,16 +55,16 @@
 </div>
 
 <%# contact us modal %>
-<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+        <h5 class="modal-title weight-300" id="contact-modal-label">Contact Us</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body weight-300">
         <%= form_for @new_message, url: messages_path, html: { class: "new-article-form" } do |f| %>
           <%= f.label "Name", class: "form-label" %>
           <%= f.text_field :name, class: "form-control", required: true %>
