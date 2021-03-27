@@ -286,9 +286,9 @@
   width: 40%;
   min-width: 100px;
   border-radius: 0;
-  border-color: #424242;
+  border-color: #8a8a8a;
   background-color: white;
-  color: black;
+  color: #424242;
   font-weight: 400;
   font-size: large;
   &:hover {
@@ -311,3 +311,16 @@
   font-weight: 300;
 }
 
+@media only screen and (max-width: 568px) {
+  // todo fill in everything here for the phone styling
+  .article-container {
+    min-width: 100%;
+   }
+
+  .article-card {
+    width: 40vw;
+    height: 40vw;
+  }
+  // do the show page
+  // align the navbar in the middle of the screen just like the articles list
+}
