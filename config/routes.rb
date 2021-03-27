@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "at_work", to: "pages#at_work"
   get "about", to: "pages#about"
   get "antiques", to: "pages#antiques"
+  get "arts", to: "pages#arts"
   resource :articles, only: [:new, :create, :edit, :update, :destroy, :show]
   resource :messages, only: [:create]
   get "admin", to: "articles#index"

@@ -19,4 +19,10 @@ class PagesController < ApplicationController
     render('impressions') unless Setting.first.display_antiques
     @articles = Article.all.antiques
   end
+
+  def arst
+    # Render another page if settings say we don't display this yet!!
+    render('impressions') unless Setting.first.display_arts
+    @articles = Article.all.arts
+  end
 end

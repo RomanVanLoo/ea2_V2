@@ -1,11 +1,20 @@
 <div class="article-big-wrapper">
   <div class="article-box carousel slide" id="articles-carousel" data-interval="false">
     <div class="article-box-top-arrow">
-      <%= link_to antiques_path do %>
-        <div class="arrow-hover-wrapper">
-          <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-back-arrow" %>
-          <p class="back-arrow-text">BACK</p>
-        </div>
+      <% if @article.category == "Antiques" %>
+        <%= link_to antiques_path do %>
+          <div class="arrow-hover-wrapper">
+            <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-back-arrow" %>
+            <p class="back-arrow-text">BACK</p>
+          </div>
+        <% end %>
+      <% elsif @article.category == "Arts" %>
+        <%= link_to arts_path do %>
+          <div class="arrow-hover-wrapper">
+            <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-back-arrow" %>
+            <p class="back-arrow-text">BACK</p>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="article-box-top-left"></div>
