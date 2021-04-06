@@ -44,7 +44,7 @@
     </div>
     <div class="article-box-bottom-right mobile-hide"></div>
   </div>
-  <div class="article-second-box">
+  <div class="article-second-box mobile-hide">
     <div class="article-second-box-top-left"></div>
     <div class="article-second-box-top-middle"></div>
     <div class="article-second-box-top-right"></div>
@@ -60,6 +60,13 @@
       <p class="article-description"><%= @article.description %></p>
     </div>
     <div class="article-second-box-bottom-right"></div>
+  </div>
+
+  <div class="article-second-box-flex hide-non-mobile">
+    <p class=""><%= @article.description %></p>
+    <button type="button" class="" data-toggle="modal" data-target="#contactModal">
+      Contact Us
+    </button>
   </div>
 </div>
 

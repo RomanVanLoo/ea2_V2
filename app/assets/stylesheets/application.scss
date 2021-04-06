@@ -316,11 +316,20 @@
   font-size: 16px;
 }
 
+.hide-non-mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 568px) {
   // todo fill in everything here for the phone styling
   .mobile-hide {
     display: none;
   }
+
+  .hide-non-mobile {
+    display: block;
+  }
+
   #logo {
     height: 45px;
   }
