@@ -208,6 +208,7 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  width: 100%;
 }
 
 .article-second-box-top-left {
@@ -311,16 +312,90 @@
   font-weight: 300;
 }
 
+.article-box-dimensions {
+  font-size: 16px;
+}
+
 @media only screen and (max-width: 568px) {
   // todo fill in everything here for the phone styling
+  .mobile-hide {
+    display: none;
+  }
+  #logo {
+    height: 45px;
+  }
+
+  #logo a img {
+    height: 45px;
+  }
+
+  .rmm-main-list li a {
+    font-size: 11px !important;
+  }
   .article-container {
     min-width: 100%;
+   }
+
+   .article-big-wrapper {
+     flex-direction: column;
+     margin-top: 65px;
    }
 
   .article-card {
     width: 40vw;
     height: 40vw;
   }
-  // do the show page
-  // align the navbar in the middle of the screen just like the articles list
+
+  .article-second-box {
+    max-width: none;
+  }
+
+  .article-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px auto 40px;
+    gap: 0px 0px;
+    grid-template-areas:
+      "."
+      "."
+      ".";
+    min-width: 80%;
+    width: 80%;
+    align-self: center;
+    align-content: center;
+    margin-right: 0;
+    max-width: none;
+    height: auto;
+    margin-bottom: 50px
+  }
+
+  .article-box-top-middle {
+    border-left: none;
+    border-right: none;
+  }
+
+  .article-box-middle-middle {
+    border-left: none;
+    border-right: none;
+  }
+
+  .article-box-bottom-middle {
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+  }
+
+  .carousel-inner img {
+    margin: auto;
+  }
+
+  .article-box-text {
+    font-size: 16px;
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  .article-box-dimensions {
+    font-size: 14px !important;
+  }
 }
