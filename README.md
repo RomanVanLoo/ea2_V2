@@ -2,4 +2,5 @@
 
 Hosted on Heroku
 
-Merging master into production triggers deployment
+Commits to master gets deployed to Staging.
+From there (heroku) you can promoto this build to production.
