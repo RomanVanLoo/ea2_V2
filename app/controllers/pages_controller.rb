@@ -17,12 +17,12 @@ class PagesController < ApplicationController
   def antiques
     # Render another page if settings say we don't display this yet!!
     render('impressions') unless Setting.first.display_antiques
-    @articles = Article.all.antiques
+    @articles = Article.antiques
   end
 
-  def arst
+  def arts
     # Render another page if settings say we don't display this yet!!
     render('impressions') unless Setting.first.display_arts
-    @articles = Article.all.arts
+    @articles = Article.arts
   end
 end
