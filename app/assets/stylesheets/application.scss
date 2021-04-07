@@ -320,7 +320,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 1000px) {
   // todo fill in everything here for the phone styling
   .mobile-hide {
     display: none;
@@ -362,7 +362,7 @@
   .article-box {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px auto 40px;
+    grid-template-rows: 40px auto auto;
     gap: 0px 0px;
     grid-template-areas:
       "."
@@ -375,7 +375,7 @@
     margin-right: 0;
     max-width: none;
     height: auto;
-    margin-bottom: 50px
+    margin-bottom: 30px
   }
 
   .article-box-top-middle {
@@ -392,6 +392,7 @@
     border-left: none;
     border-right: none;
     border-bottom: 1px solid black;
+    min-height: 40px;
   }
 
   .carousel-inner img {
@@ -399,12 +400,47 @@
   }
 
   .article-box-text {
-    font-size: 16px;
+    font-size: 19px;
     padding-left: 0px;
     text-align: center;
   }
 
-  .article-box-dimensions {
+  #article-box-dimensions {
     font-size: 14px !important;
+  }
+
+  .article-second-box-flex {
+    display: flex;
+    flex-direction: column;
+    p {
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        font-weight: 300;
+        font-family: 'Roboto';
+        line-height: 18px;
+        letter-spacing: 0.15em;
+        text-align: center;
+    }
+    button {
+      margin: 30px auto;
+      height: 41px;
+      width: 160px;
+      border: none;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: white;
+      text-align: center;
+      background: #1d1d1d;
+      &:hover {
+        color: #424242;
+        background-color: white;
+        text-decoration: none;
+        border: 1px solid #424242;
+      }
+    }
   }
 }
