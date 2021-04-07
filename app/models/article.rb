@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class Article < ApplicationRecord
   has_many_attached :photos
   has_many :messages, dependent: :destroy
-  
-  CATEGORIES = [
-    "Antiques",
-    "Art"
+
+  CATEGORIES = %w[
+    Antiques
+    Art
   ].freeze
 
-  scope :antiques, -> { where(category: "Antiques") }
+  scope :antiques, -> { where(category: 'Antiques') }
 
   before_destroy :delete_photos
 

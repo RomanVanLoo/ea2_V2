@@ -8,9 +8,9 @@
   <%= f.text_area :description, class: "form-control", required: true %>
   <%= f.label "Dimensions", class: "form-label" %>
   <%= f.text_field :dimensions, class: "form-control" %>
-  <%= f.label "Price", class: "form-label" %>
+  <%= f.label "Price (optional)", class: "form-label" %>
   <%= f.number_field :price, step: 0.01, class: "form-control" %>
-  <%= f.label "Upload Photo", class: "form-label" %><br>
+  <%= f.label "Upload Photo (first one selected will be the thumbnail)", class: "form-label" %><br>
   <%= f.file_field :photos, multiple: true, required: true %><br>
   <%= f.submit "Create", class: "btn btn-primary" %>
 <% end %>
