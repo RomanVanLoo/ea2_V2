@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options host: "ea2.be"
   devise_for :users, skip: [:registrations]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "pages#impressions"
