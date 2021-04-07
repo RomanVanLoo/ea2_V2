@@ -6,10 +6,11 @@ class Article < ApplicationRecord
 
   CATEGORIES = %w[
     Antiques
-    Art
+    Arts
   ].freeze
 
   scope :antiques, -> { where(category: 'Antiques') }
+  scope :arts, -> { where(category: 'Arts') }
 
   before_destroy :delete_photos
 
