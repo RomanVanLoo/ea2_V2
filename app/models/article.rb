@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   has_many_attached :photos
-  has_many :messages
+  has_many :messages, dependent: :destroy
   
   CATEGORIES = [
     "Antiques",
