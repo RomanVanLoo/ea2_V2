@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,12 +9,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new
-user.email = 'romanvanloo@icloud.com'
+user.email = ENV['ROMAN_EMAIL']
 user.password = ENV['ROMAN_PASSWORD']
 user.password_confirmation = ENV['ROMAN_PASSWORD']
 user.save!
 
-settings = Setting.new
-settings.display_arts = true
-settings.display_antiques = true
-settings.save!
+Setting.create!(display_arts: false, display_antiques: false)

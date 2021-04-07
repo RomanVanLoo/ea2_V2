@@ -1,0 +1,99 @@
+<div class="article-big-wrapper">
+  <div class="article-box carousel slide" id="articles-carousel" data-interval="false" data-touch="true" data-ride="carousel">
+    <div class="article-box-top-arrow mobile-hide">
+      <% if @article.category == "Antiques" %>
+        <%= link_to antiques_path do %>
+          <div class="arrow-hover-wrapper">
+            <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-back-arrow" %>
+            <p class="back-arrow-text">BACK</p>
+          </div>
+        <% end %>
+      <% elsif @article.category == "Arts" %>
+        <%= link_to arts_path do %>
+          <div class="arrow-hover-wrapper">
+            <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-back-arrow" %>
+            <p class="back-arrow-text">BACK</p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="article-box-top-left mobile-hide"></div>
+    <div class="article-box-top-middle">
+      <p class="article-box-text"><%= @article.title %></p>
+    </div>
+    <div class="article-box-top-right mobile-hide"></div>
+    <div class="article-box-middle-left mobile-hide" href="#articles-carousel" role="button" data-slide="prev">
+      <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-arrow-left" %>
+    </div>
+    <div class="article-box-middle-middle">
+      <div class="carousel-inner" align="center">
+        <% @article.photos.each_with_index do |photo, i| %>
+          <div class="carousel-item<%= i.zero? ? " active" : "" %>">
+            <img src="<%= photo.url %>">
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <a class="article-box-middle-right mobile-hide" href="#articles-carousel" role="button" data-slide="next">
+      <%= inline_svg_tag "polygon-back-arrow.svg", class: "article-arrow-right" %>
+    </a>
+    <div class="article-box-bottom-left mobile-hide"></div>
+    <div class="article-box-bottom-double-left mobile-hide"></div>
+    <div class="article-box-bottom-middle">
+      <p id="article-box-dimensions" class="article-box-text"><%= @article.dimensions %></p>
+    </div>
+    <div class="article-box-bottom-right mobile-hide"></div>
+  </div>
+  <div class="article-second-box mobile-hide">
+    <div class="article-second-box-top-left"></div>
+    <div class="article-second-box-top-middle"></div>
+    <div class="article-second-box-top-right"></div>
+    <div class="article-second-box-middle-left"></div>
+    <div class="article-second-box-middle-middle">
+      <button type="button" class="article-contact-us-btn" data-toggle="modal" data-target="#contactModal">
+        Contact Us
+      </button>
+    </div>
+    <div class="article-second-box-middle-right"></div>
+    <div class="article-second-box-bottom-left"></div>
+    <div class="article-second-box-bottom-middle">
+      <p class="article-description"><%= @article.description %></p>
+    </div>
+    <div class="article-second-box-bottom-right"></div>
+  </div>
+
+  <div class="article-second-box-flex hide-non-mobile">
+    <p class=""><%= @article.description %></p>
+    <button type="button" class="" data-toggle="modal" data-target="#contactModal">
+      Contact Us
+    </button>
+  </div>
+</div>
+
+<%# contact us modal %>
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title weight-300" id="contact-modal-label">Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body weight-300">
+        <%= form_for @new_message, url: messages_path, html: { class: "new-article-form" } do |f| %>
+          <%= f.label "Name", class: "form-label" %>
+          <%= f.text_field :name, class: "form-control", required: true %>
+          <%= f.label "Email", class: "form-label" %>
+          <%= f.text_field :email, class: "form-control", required: true %>
+          <%= f.label "Message", class: "form-label" %>
+          <%= f.text_area :content, class: "form-control", required: true %>
+          <%= f.hidden_field :article_id, value: @article.id %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Send", class: "btn btn-primary contact-send-btn" %>
+      </div>
+        <% end %>
+    </div>
+  </div>
+</div>

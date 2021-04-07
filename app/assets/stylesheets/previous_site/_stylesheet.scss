@@ -22,7 +22,7 @@ ul li { margin-top: 12px; }
 STRUCTURE
 *************************************************************************************/
 #pagewrap {
-	width: 960px;
+	width: 1160px;
 	margin: 0 auto;
 }
 #header {
@@ -30,12 +30,14 @@ STRUCTURE
 }
 #content {
 	width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #footer {
 	clear: both;
 }
 
-#logo { width: 350px; height:65px; float: left; }
+#logo { width: 350px; height:65px; float: left; padding-left: 30px;}
 #line_1, #line_2 { margin-bottom:50px; }
 
 #line_2_links { width: 540px; max-height:680px; float: left; }

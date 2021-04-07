@@ -43,6 +43,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'letter_opener'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -62,3 +64,5 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'cloudinary'
 gem 'devise_invitable', '~> 2.0.0'
+gem 'inline_svg'
+gem 'pony'

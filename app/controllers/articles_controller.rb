@@ -1,6 +1,13 @@
 class ArticlesController < ApplicationController
+    skip_before_action :authenticate_user!, only: :show
+
   def index
     @articles = Article.all.order(:id)
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    @new_message = @article.messages.build
   end
 
   def new

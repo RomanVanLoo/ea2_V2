@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+
   skip_before_action :authenticate_user!
 
   def impressions
@@ -12,5 +12,17 @@ class PagesController < ApplicationController
   end
 
   def about
+  end
+
+  def antiques
+    # Render another page if settings say we don't display this yet!!
+    render('impressions') unless Setting.first.display_antiques
+    @articles = Article.all.antiques
+  end
+
+  def arst
+    # Render another page if settings say we don't display this yet!!
+    render('impressions') unless Setting.first.display_arts
+    @articles = Article.all.arts
   end
 end

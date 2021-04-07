@@ -23,15 +23,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+    <div id="notice-alert">
+      <%= render 'shared/notice' %>
+    </div>
 
     <div id="pagewrap">
       <div id="header">
@@ -42,6 +41,13 @@
         </div>
         <div class="rmm">
           <ul>
+            <% if Setting.first.display_antiques %>
+              <li><%= link_to "Antiques", antiques_path, class: "#{"active" if (current_page?(antiques_path) || @article&.category == 'Antiques')}" %></li>
+            <% end %>
+            <% if Setting.first.display_arts %>
+              <%# the path should change %>
+              <li><%= link_to "Arts", root_path, class: "#{"active" if (current_page?(arts_path) || @article&.category == 'Arts')}" %></li> 
+            <% end %>
             <li><%= link_to "Impressions", root_path, class: "#{"active" if current_page?(root_path)}" %></li>
             <li><%= link_to "Before & After", before_and_after_path, class: "#{"active" if current_page?(before_and_after_path)}" %></li>
             <li><%= link_to "At Work", at_work_path, class: "#{"active" if current_page?(at_work_path)}" %></li>
