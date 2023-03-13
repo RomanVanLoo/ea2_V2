@@ -9,9 +9,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new
-user.email = ENV['ROMAN_EMAIL']
-user.password = ENV['ROMAN_PASSWORD']
-user.password_confirmation = ENV['ROMAN_PASSWORD']
+user.email = ENV["ROMAN_EMAIL"]
+user.password = ENV["ROMAN_PASSWORD"]
+user.password_confirmation = ENV["ROMAN_PASSWORD"]
 user.save!
 
 Setting.create!(display_arts: false, display_antiques: false)
