@@ -18,7 +18,7 @@ class Message < ApplicationRecord
         subject: "New contact message for EA2",
         body: create_body,
         via_options: {
-          address: 'smtp.gmail.com',
+          address: "smtp.gmail.com",
           port: 587,
           enable_starttls_auto: true,
           user_name: ENV["GMAIL_EMAIL"],
