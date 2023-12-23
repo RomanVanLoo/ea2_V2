@@ -24,4 +24,10 @@ class PagesController < ApplicationController
     render("impressions") unless Setting.first.display_arts
     @articles = Article.arts
   end
+
+  def flooring
+    # Render another page if settings say we don't display this yet!!
+    render("impressions") unless Setting.first.display_flooring
+    @articles = Article.flooring
+  end
 end
