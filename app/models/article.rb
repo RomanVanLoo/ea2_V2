@@ -9,8 +9,8 @@ class Article < ApplicationRecord
     Arts
   ].freeze
 
-  scope :antiques, -> { where(category: 'Antiques') }
-  scope :arts, -> { where(category: 'Arts') }
+  scope :antiques, -> { where(category: "Antiques").order(:created_at) }
+  scope :arts, -> { where(category: "Arts").order(:created_at) }
 
   before_destroy :delete_photos
 
