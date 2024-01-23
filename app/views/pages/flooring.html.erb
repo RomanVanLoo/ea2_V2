@@ -1,0 +1,13 @@
+<% content_for(:html_title) { 'ARTS - EA2' } %>
+
+<div id="content">
+  <div class="article-container">
+    <% @articles.each do |article| %>
+      <%= link_to articles_path(id: article.id) do %>
+        <div class="article-card">
+          <img src="<%= article.photos.first.url %>" class="card-img-top" style="object-fit: cover">
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

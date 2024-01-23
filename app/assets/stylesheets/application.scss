@@ -321,7 +321,6 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  // todo fill in everything here for the phone styling
   .mobile-hide {
     display: none;
   }
@@ -360,14 +359,8 @@
   }
 
   .article-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 40px auto auto;
-    gap: 0px 0px;
-    grid-template-areas:
-      "."
-      "."
-      ".";
+    display: flex;
+    flex-direction: column;
     min-width: 80%;
     width: 80%;
     align-self: center;
