@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2023_12_23_173145) do
     t.boolean "display_antiques"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "display_flooring"
+    t.boolean "display_flooring"
   end
 
   create_table "users", force: :cascade do |t|
