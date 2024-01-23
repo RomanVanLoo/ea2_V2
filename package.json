@@ -24,9 +24,5 @@
   },
   "engines": {
     "node": "18.16.0"
-  },
-    "scripts": {
-    "build": "webpack --mode production",
-    "postinstall": "npm run build"
   }
 }
