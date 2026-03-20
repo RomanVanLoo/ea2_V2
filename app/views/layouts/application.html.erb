@@ -42,7 +42,7 @@
         <div class="rmm">
           <ul>
             <% if Setting.first.display_antiques %>
-              <li><%= link_to "Antiques", antiques_path, class: "#{"active" if (current_page?(antiques_path) || @article&.category == 'Antiques')}" %></li>
+              <li><%= link_to "Inventory", antiques_path, class: "#{"active" if (current_page?(antiques_path) || @article&.category == 'Antiques')}" %></li>
             <% end %>
 
             <% if Setting.first.display_arts %>
